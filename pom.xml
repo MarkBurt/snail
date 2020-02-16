@@ -13,6 +13,7 @@
         <module>snail_utils</module>
         <module>snail_model</module>
         <module>snail_apis</module>
+        <module>snail_article</module>
     </modules>
 
 

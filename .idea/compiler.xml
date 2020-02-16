@@ -10,6 +10,7 @@
         <module name="snail_common" />
         <module name="snail_apis" />
         <module name="snail_model" />
+        <module name="snail_article" />
         <module name="snail_utils" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="snail_apis" options="-parameters" />
+      <module name="snail_article" options="-parameters" />
       <module name="snail_common" options="-parameters" />
       <module name="snail_model" options="-parameters" />
       <module name="snail_utils" options="-parameters" />
