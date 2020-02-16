@@ -12,6 +12,7 @@
         <module>snail_common</module>
         <module>snail_utils</module>
         <module>snail_model</module>
+        <module>snail_apis</module>
     </modules>
 
 
