@@ -10,8 +10,8 @@
         <module name="snail_common" />
         <module name="snail_apis" />
         <module name="snail_model" />
-        <module name="snail_article" />
         <module name="snail_utils" />
+        <module name="snail_article" />
       </profile>
     </annotationProcessing>
   </component>
