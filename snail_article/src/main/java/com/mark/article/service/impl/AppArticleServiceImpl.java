@@ -131,13 +131,20 @@ public class AppArticleServiceImpl implements AppArticleService {
     }
 
     /**
-     *
+     *更新 点赞 阅读数
      * @param dto
      * @return
      */
     @Override
     public ResponseResult updateArticleView(ArticleVisitStreamDto dto) {
-        return null;
+        int rows = apArticleMapper.updateArticleView(
+                dto.getArticleId(),
+                dto.getView(),
+                dto.getCollect(),
+                dto.getCommont(),
+                dto.getLike()
+        );
+        return ResponseResult.okResult(rows);
     }
 
     /**
