@@ -23,10 +23,10 @@ public interface ArticleHomeControllerApi {
 
     /**
      * 加载更多
-     * @param dot
+     * @param dto
      * @return
      */
-    public ResponseResult loadMore(ArticleHomeDto dot);
+    public ResponseResult loadMore(ArticleHomeDto dto);
 
     /**
      * 加载最新的文章信息
