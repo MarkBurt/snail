@@ -83,7 +83,7 @@
     delete from cl_ip_pool
     where id = #{id}
   </delete>
-    <insert id="insert" parameterType="com.heima.model.crawler.pojos.ClIpPool"
+    <insert id="insert" parameterType="com.mark.model.crawler.pojos.ClIpPool"
             useGeneratedKeys="true" keyProperty="id">
     insert into cl_ip_pool (id, supplier, ip, port,username,password,code,duration,error,
       is_enable, ranges, created_time
@@ -92,7 +92,7 @@
       #{isEnable}, #{ranges}, #{createdTime}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.heima.model.crawler.pojos.ClIpPool" keyProperty="id" useGeneratedKeys="true">
+    <insert id="insertSelective" parameterType="com.mark.model.crawler.pojos.ClIpPool" keyProperty="id" useGeneratedKeys="true">
 
         insert into cl_ip_pool
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -172,7 +172,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.heima.model.crawler.pojos.ClIpPool">
+    <update id="updateByPrimaryKeySelective" parameterType="com.mark.model.crawler.pojos.ClIpPool">
 
         update cl_ip_pool
         <set>
@@ -212,7 +212,7 @@
         </set>
         where id = #{id}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.heima.model.crawler.pojos.ClIpPool">
+    <update id="updateByPrimaryKey" parameterType="com.mark.model.crawler.pojos.ClIpPool">
 
     update cl_ip_pool
     set supplier = #{supplier},

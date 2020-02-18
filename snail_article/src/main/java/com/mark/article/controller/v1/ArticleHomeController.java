@@ -2,7 +2,7 @@ package com.mark.article.controller.v1;
 
 import com.mark.article.apis.ArticleHomeControllerApi;
 import com.mark.article.service.AppArticleService;
-import com.mark.common.constans.ArticleConstans;
+import com.mark.common.article.constans.ArticleConstans;
 import com.mark.model.article.dtos.ArticleHomeDto;
 import com.mark.model.common.dtos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;

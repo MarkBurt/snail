@@ -1,4 +1,4 @@
-package com.mark.common.core;
+package com.mark.common.mysql.core;
 
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Getter;
@@ -22,7 +22,7 @@ import java.io.IOException;
 @Configuration
 @ConfigurationProperties(prefix = "mysql.core")
 @PropertySource("classpath:mysql-core-jdbc.properties")
-@MapperScan(basePackages = "com.heima.model.mappers",sqlSessionFactoryRef = "mysqlCoreSessionFactory")
+@MapperScan(basePackages = "com.mark.model.mappers",sqlSessionFactoryRef = "mysqlCoreSessionFactory")
 public class MysqlCoreConfig {
 
     String jdbcUrl;

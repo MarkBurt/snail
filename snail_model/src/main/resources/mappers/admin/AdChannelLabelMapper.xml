@@ -64,7 +64,7 @@
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective"
-            parameterType="com.heima.model.admin.pojos.AdChannelLabel">
+            parameterType="com.mark.model.admin.pojos.AdChannelLabel">
         update ad_channel_label
         <set>
             <if test="channelId != null">
@@ -79,7 +79,7 @@
         </set>
         where id = #{id}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.heima.model.admin.pojos.AdChannelLabel">
+    <update id="updateByPrimaryKey" parameterType="com.mark.model.admin.pojos.AdChannelLabel">
     update ad_channel_label
     set channel_id = #{channelId},
       label_id = #{labelId},

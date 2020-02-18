@@ -78,7 +78,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.heima.model.admin.pojos.AdLabel">
+    <update id="updateByPrimaryKeySelective" parameterType="com.mark.model.admin.pojos.AdLabel">
         update ad_label
         <set>
             <if test="name != null">
@@ -93,7 +93,7 @@
         </set>
         where id = #{id}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.heima.model.admin.pojos.AdLabel">
+    <update id="updateByPrimaryKey" parameterType="com.mark.model.admin.pojos.AdLabel">
     update ad_label
     set name = #{name},
       type = #{type},

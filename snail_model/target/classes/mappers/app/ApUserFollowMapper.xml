@@ -24,7 +24,7 @@
     /*!mycat:sql=select id from ap_user_follow where burst='${burst}'*/
     delete from ap_user_follow where user_id = #{userId} and  follow_id = #{followId}
     </delete>
-    <insert id="insert" parameterType="com.heima.model.user.pojos.ApUserFollow" >
+    <insert id="insert" parameterType="com.mark.model.user.pojos.ApUserFollow" >
     insert into ap_user_follow (id, user_id, follow_id,
       follow_name, level, is_notice,
       created_time,burst)

@@ -15,6 +15,7 @@
         <module>snail_apis</module>
         <module>snail_article</module>
         <module>snail_behavior</module>
+        <module>snail_login</module>
     </modules>
 
 

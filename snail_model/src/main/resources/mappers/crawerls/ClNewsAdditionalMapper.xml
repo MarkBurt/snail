@@ -64,7 +64,7 @@
     delete from cl_news_additional
     where id = #{id}
   </delete>
-    <insert id="insert" parameterType="com.heima.model.crawler.pojos.ClNewsAdditional"
+    <insert id="insert" parameterType="com.mark.model.crawler.pojos.ClNewsAdditional"
             keyProperty="id" useGeneratedKeys="true">
     insert into cl_news_additional (id, news_id, url,
       read_count, likes, comment,
@@ -77,7 +77,7 @@
       #{createdTime}, #{count}, #{updatedTime},#{updateNum},#{nextUpdateTime}
       )
   </insert>
-    <insert id="insertSelective" parameterType="com.heima.model.crawler.pojos.ClNewsAdditional"
+    <insert id="insertSelective" parameterType="com.mark.model.crawler.pojos.ClNewsAdditional"
             keyProperty="id" useGeneratedKeys="true">
 
         insert into cl_news_additional
@@ -173,7 +173,7 @@
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective"
-            parameterType="com.heima.model.crawler.pojos.ClNewsAdditional">
+            parameterType="com.mark.model.crawler.pojos.ClNewsAdditional">
         update cl_news_additional
         <set>
             <if test="newsId != null">
@@ -218,7 +218,7 @@
         </set>
         where id = #{id}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.heima.model.crawler.pojos.ClNewsAdditional">
+    <update id="updateByPrimaryKey" parameterType="com.mark.model.crawler.pojos.ClNewsAdditional">
     update cl_news_additional
     set news_id = #{newsId},
       url = #{url},

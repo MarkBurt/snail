@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@ComponentScan({"com.mark.common.common.init","com.mark.common.kafka"})
+@ComponentScan({"com.mark.common.common.init"})
 public class InitConfig {
 }

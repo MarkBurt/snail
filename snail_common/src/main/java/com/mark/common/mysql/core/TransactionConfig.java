@@ -1,4 +1,4 @@
-package com.mark.common.core;
+package com.mark.common.mysql.core;
 
 import lombok.Getter;
 import lombok.Setter;

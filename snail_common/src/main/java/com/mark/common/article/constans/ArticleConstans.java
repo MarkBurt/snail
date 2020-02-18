@@ -1,4 +1,4 @@
-package com.mark.common.constans;
+package com.mark.common.article.constans;
 
 public class ArticleConstans {
 

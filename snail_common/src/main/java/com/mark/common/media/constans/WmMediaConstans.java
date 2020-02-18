@@ -1,4 +1,4 @@
-package com.mark.common.constans;
+package com.mark.common.media.constans;
 
 public class WmMediaConstans {
     public static final Short COLLECT_MATERIAL= 1; //收藏

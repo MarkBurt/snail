@@ -1,7 +1,7 @@
 package com.mark.article.service.impl;
 
 import com.mark.article.service.AppArticleService;
-import com.mark.common.constans.ArticleConstans;
+import com.mark.common.article.constans.ArticleConstans;
 import com.mark.model.article.dtos.ArticleHomeDto;
 import com.mark.model.article.pojos.ApArticle;
 import com.mark.model.common.dtos.ResponseResult;

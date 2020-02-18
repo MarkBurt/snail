@@ -37,13 +37,13 @@
     },
     {
       "name": "mysql.core",
-      "type": "com.mark.common.core.MysqlCoreConfig",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "type": "com.mark.common.mysql.core.MysqlCoreConfig",
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core",
-      "type": "com.mark.common.core.TransactionConfig",
-      "sourceType": "com.mark.common.core.TransactionConfig"
+      "type": "com.mark.common.mysql.core.TransactionConfig",
+      "sourceType": "com.mark.common.mysql.core.TransactionConfig"
     },
     {
       "name": "spring.elasticsearch.jest",
@@ -167,37 +167,37 @@
     {
       "name": "mysql.core.aliases-package",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core.jdbc-driver",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core.jdbc-password",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core.jdbc-url",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core.jdbc-user-name",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core.root-mapper",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.MysqlCoreConfig"
+      "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
       "name": "mysql.core.tx-scan-package",
       "type": "java.lang.String",
-      "sourceType": "com.mark.common.core.TransactionConfig"
+      "sourceType": "com.mark.common.mysql.core.TransactionConfig"
     },
     {
       "name": "spring.elasticsearch.jest.connection-timeout",
