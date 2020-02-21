@@ -11,6 +11,7 @@ import com.mark.model.mappers.app.ApUnlikesBehaviorMapper;
 import com.mark.model.user.pojos.ApUser;
 import com.mark.utils.threadlocal.AppThreadLocalUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
@@ -23,6 +24,9 @@ import java.util.Date;
  * @UpdateRemark :  Project Build
  * @Version :  1.0
  */
+
+@Service
+@SuppressWarnings("all")
 public class AppUnLikesBehaviorServiceImpl implements AppUnLikesBehaviorService {
 
     @Autowired
