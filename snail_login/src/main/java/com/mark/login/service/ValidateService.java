@@ -3,8 +3,9 @@ package com.mark.login.service;
 import com.mark.model.user.pojos.ApUser;
 
 /**
- * @Description :   对称加密  DES  AES
- *                   散列算法 MD5  加盐 salt
+ * @Description :  验证服务
+ * 对称加密  DES  AES
+ * 散列算法 MD5  加盐 salt
  * @Author :  Markburt
  * @CreateDate :  2020/2/22$ 下午 07:42$
  * @UpdateUser :  Markburt
