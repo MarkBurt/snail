@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ApFollowBehavior {
     private Long id;

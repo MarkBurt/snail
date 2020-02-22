@@ -5,6 +5,9 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ApLoginBehavior {
     private Integer id;

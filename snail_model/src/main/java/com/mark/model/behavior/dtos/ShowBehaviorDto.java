@@ -7,12 +7,20 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ShowBehaviorDto {
 
-    // 设备ID
+    /**
+     * 设备ID
+     */
     @IdEncrypt
     Integer equipmentId;
+    /**
+     * 文章ID
+     */
     List<ApArticle> articleIds;
 
 }

@@ -3,12 +3,19 @@ package com.mark.model.behavior.dtos;
 import com.mark.model.annotation.IdEncrypt;
 import lombok.Data;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ReadBehaviorDto {
-    // 设备ID
+    /**
+     * 设备ID
+     */
     @IdEncrypt
     Integer equipmentId;
-    // 文章、动态、评论等ID
+    /**
+     * 文章、动态、评论等ID
+     */
     @IdEncrypt
     Integer articleId;
 

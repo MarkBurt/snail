@@ -7,6 +7,9 @@ import org.apache.ibatis.type.Alias;
 
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ApLikesBehavior {
     private Long id;
@@ -19,7 +22,10 @@ public class ApLikesBehavior {
     private Date createdTime;
     @JsonIgnore
     private String burst;
-    // 定义点赞内容的类型
+
+    /**
+     *  定义点赞内容的类型
+     */
     @Alias("ApLikesBehaviorEnumType")
     public enum Type{
         ARTICLE((short)0),DYNAMIC((short)1),COMMENT((short)2);
@@ -31,7 +37,10 @@ public class ApLikesBehavior {
             return this.code;
         }
     }
-    //定义点赞操作的方式，点赞还是取消点赞
+
+    /**
+     * 定义点赞操作的方式，点赞还是取消点赞
+     */
     @Alias("ApLikesBehaviorEnumOperation")
     public enum Operation{
         LIKE((short)0),CANCEL((short)1);

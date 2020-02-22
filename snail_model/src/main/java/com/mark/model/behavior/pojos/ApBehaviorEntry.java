@@ -6,6 +6,9 @@ import org.apache.ibatis.type.Alias;
 
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ApBehaviorEntry {
     private Integer id;

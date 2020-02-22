@@ -5,12 +5,19 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class CollectionBehaviorDto {
-    // 设备ID
+    /**
+     * 设备ID
+     */
     @IdEncrypt
     Integer equipmentId;
-    // 文章、动态ID
+    /**
+     * 文章、动态ID
+     */
     @IdEncrypt
     Integer entryId;
     /**
@@ -27,6 +34,9 @@ public class CollectionBehaviorDto {
      */
     Short operation;
 
+    /**
+     * 公布时间
+     */
     Date publishedTime;
 
 }

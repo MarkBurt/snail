@@ -6,6 +6,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ApReadBehavior {
     private Long id;

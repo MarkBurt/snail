@@ -6,6 +6,9 @@ import org.apache.ibatis.type.Alias;
 
 import java.util.Date;
 
+/**
+ * @author MAIBENBEN
+ */
 @Data
 public class ApUnlikesBehavior {
     private Long id;
@@ -15,7 +18,10 @@ public class ApUnlikesBehavior {
     private Integer articleId;
     private Short type;
     private Date createdTime;
-    // 定义不喜欢操作的类型
+
+    /**
+     *  定义不喜欢操作的类型
+     */
     @Alias("ApUnlikesBehaviorEnumType")
     public enum Type{
         UNLIKE((short)0),CANCEL((short)1);
