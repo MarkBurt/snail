@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Description :  java类作用描述
+ * @Description :  用户登录服务
  * @Author :  Markburt
  * @CreateDate :  2020/2/18$ 下午 01:52$
  * @UpdateUser :  Markburt
