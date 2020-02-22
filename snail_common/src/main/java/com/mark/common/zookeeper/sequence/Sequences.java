@@ -4,6 +4,9 @@ import com.mark.common.zookeeper.ZookeeperClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author MAIBENBEN
+ */
 @Component
 public class Sequences {
 

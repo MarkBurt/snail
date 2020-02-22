@@ -6,6 +6,9 @@ import org.apache.curator.framework.recipes.atomic.AtomicValue;
 import org.apache.curator.framework.recipes.atomic.DistributedAtomicLong;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
+/**
+ * @author MAIBENBEN
+ */
 public class ZkSequence {
 
     RetryPolicy retryPolicy = new ExponentialBackoffRetry(500,3);

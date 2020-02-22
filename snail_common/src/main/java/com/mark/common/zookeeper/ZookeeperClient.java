@@ -14,6 +14,9 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import java.util.Map;
 
+/**
+ * @author MAIBENBEN
+ */
 @Setter
 @Getter
 public class ZookeeperClient {
@@ -34,7 +37,9 @@ public class ZookeeperClient {
 
     CuratorFramework client = null;
 
-    // 序列化集合
+    /**
+     * 序列化集合
+     */
     private Map<String, ZkSequence> zkSequenceMap = Maps.newConcurrentMap();
 
     public ZookeeperClient(String host, String sequencePath) {

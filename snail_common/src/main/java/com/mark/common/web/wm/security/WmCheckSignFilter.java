@@ -25,15 +25,21 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+/**
+ * @author MAIBENBEN
+ */
 @Order(1)
 @WebFilter(filterName = "wmCheckSignFilter" ,urlPatterns = "/*")
 public class WmCheckSignFilter extends GenericFilterBean {
 
     Logger logger = LoggerFactory.getLogger(WmCheckSignFilter.class);
 
-    // URL有效果的验签效果
+    /**
+     * URL有效果的验签效果
+     */
     public final static int URL_TIMEOUT = 2 * 60 * 1000;
 
+    @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         ResponseResult<?> result = checkToken(request);
@@ -73,7 +79,11 @@ public class WmCheckSignFilter extends GenericFilterBean {
         return rr;
     }
 
-    //从请求中获取所有参数
+    /**
+     * 从请求中获取所有参数
+     * @param request
+     * @return
+     */
     private static SortedMap<String, String> getAllParams(HttpServletRequest request) {
         SortedMap<String, String> result = new TreeMap<>();
         Map<String, String> urlParams = getUrlParams(request);
@@ -83,7 +93,11 @@ public class WmCheckSignFilter extends GenericFilterBean {
         return result;
     }
 
-    //将请求参数转换成Map
+    /**
+     * 将请求参数转换成Map
+     * @param request
+     * @return
+     */
     private static Map<String, String> getUrlParams(HttpServletRequest request) {
         String param = "";
         try {
