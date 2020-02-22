@@ -13,5 +13,11 @@ import com.mark.model.common.dtos.ResponseResult;
  * @Version :  1.0
  */
 public interface AppLikesBehaviorService {
+
+    /**
+     * 保存用户喜欢的行为
+     * @param dto
+     * @return
+     */
     ResponseResult saveLikesBehavior(LikesBehaviorDto dto);
 }
