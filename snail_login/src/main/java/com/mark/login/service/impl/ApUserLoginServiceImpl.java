@@ -61,4 +61,35 @@ public class ApUserLoginServiceImpl implements ApUserLoginService {
         return ResponseResult.okResult(map);
     }
 
+
+    /**
+     * 根据用户名和密码登录验证V2
+     * @param user
+     * @return
+     */
+    @Override
+    public ResponseResult loginAuthV2(ApUser user) {
+        //验证参数
+        if(StringUtils.isEmpty(user.getPhone())|| StringUtils.isEmpty(user.getPassword())){
+            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+        }
+        //查询用户
+        ApUser dbUser = apUserMapper.selectByApPhone(user.getPhone());
+        if(dbUser==null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.AP_USER_DATA_NOT_EXIST);
+        }
+        //验证密码
+        boolean isValid = validateService.validateMD5(user, dbUser);
+        if(!isValid){
+            return ResponseResult.errorResult(AppHttpCodeEnum.LOGIN_PASSWORD_ERROR);
+        }
+
+        user.setPassword("");
+        Map<String,Object> map = new HashMap<>();
+        map.put("token", AppJwtUtil.getToken(user));
+        map.put("user",user);
+
+        return ResponseResult.okResult(map);
+    }
+
 }

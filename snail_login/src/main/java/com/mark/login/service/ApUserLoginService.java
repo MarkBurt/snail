@@ -20,4 +20,11 @@ public interface ApUserLoginService {
      * @return
      */
     ResponseResult loginAuth(ApUser user);
+
+
+
+    /**
+     * 根据用户名和密码登录验证  V2
+     */
+    ResponseResult loginAuthV2(ApUser user);
 }
