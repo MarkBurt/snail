@@ -4,6 +4,7 @@ import com.mark.login.service.ValidateService;
 import com.mark.model.user.pojos.ApUser;
 import com.mark.utils.common.DESUtils;
 import com.mark.utils.common.MD5Utils;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description :  验证服务
@@ -14,6 +15,7 @@ import com.mark.utils.common.MD5Utils;
  * @UpdateRemark :  Project Build
  * @Version :  1.0
  */
+@Service
 public class ValidateServiceImpl implements ValidateService {
 
 

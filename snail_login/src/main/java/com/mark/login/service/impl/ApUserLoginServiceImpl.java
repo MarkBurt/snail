@@ -32,7 +32,7 @@ public class ApUserLoginServiceImpl implements ApUserLoginService {
     @Autowired
     private ApUserMapper apUserMapper;
 
-    @Autowired
+    @Autowired(required=true)
     private ValidateService validateService;
 
     /***
