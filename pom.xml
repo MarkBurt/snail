@@ -16,6 +16,7 @@
         <module>snail_article</module>
         <module>snail_behavior</module>
         <module>snail_login</module>
+        <module>snail_user</module>
     </modules>
 
 

@@ -10,6 +10,7 @@
         <module name="snail_utils" />
         <module name="snail_behavior" />
         <module name="snail_article" />
+        <module name="snail_user" />
         <module name="snail_model" />
         <module name="snail_common" />
         <module name="snail_apis" />
@@ -25,6 +26,7 @@
       <module name="snail_common" options="-parameters" />
       <module name="snail_login" options="-parameters" />
       <module name="snail_model" options="-parameters" />
+      <module name="snail_user" options="-parameters" />
       <module name="snail_utils" options="-parameters" />
     </option>
   </component>
