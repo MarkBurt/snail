@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <properties>
-        <property name="CONSOLE_PATTERN">${log.pattern}</property>
+        <property name="CONSOLE_PATTERN">%d{DEFAULT}^|%sn^|%level^|%t^|%c^|%M^|%msg%n</property>
         <property name="FILE_NAME">snail_login-1.0-SNAPSHOT</property>
     </properties>
     <!--先定义所有的appender-->
@@ -29,7 +29,7 @@
         <logger name="org.apache.kafka" level="INFO"></logger>
         <logger name="com.netflix.discovery" level="INFO"></logger>
         <logger name="org.hibernate" level="INFO"></logger>
-        <root level="${log.level}">
+        <root level="DEBUG">
             <appender-ref ref="Console"/>
             <appender-ref ref="RollingFileInfo"/>
         </root>
