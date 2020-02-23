@@ -4,6 +4,7 @@ import com.mark.common.zookeeper.sequence.Sequences;
 import com.mark.login.service.AppFollowBehaviorService;
 import com.mark.login.service.AppUserRelationService;
 import com.mark.model.article.pojos.ApAuthor;
+import com.mark.model.behavior.dtos.FollowBehaviorDto;
 import com.mark.model.common.dtos.ResponseResult;
 import com.mark.model.common.enums.AppHttpCodeEnum;
 import com.mark.model.mappers.app.ApAuthorMapper;
@@ -12,9 +13,14 @@ import com.mark.model.mappers.app.ApUserFollowMapper;
 import com.mark.model.mappers.app.ApUserMapper;
 import com.mark.model.user.dtos.UserRelationDto;
 import com.mark.model.user.pojos.ApUser;
+import com.mark.model.user.pojos.ApUserFan;
+import com.mark.model.user.pojos.ApUserFollow;
+import com.mark.utils.common.BurstUtils;
 import com.mark.utils.threadlocal.AppThreadLocalUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 /**
  * @Description :  java类作用描述
@@ -104,9 +110,61 @@ public class AppUserRelationServiceImpl implements AppUserRelationService {
      * @return
      */
     private ResponseResult followByUserId(ApUser user, Integer followId, Integer articleId) {
+        ApUser apUser = apUserMapper.selectById(followId);
 
+        if(apUser==null){
 
-        return null;
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST,"关注用户不存在");
+        }
+
+        ApUserFollow apUserFollow = apUserFollowMapper.selectByFollowId(BurstUtils.groudOne(user.getId()), user.getId(), followId);
+
+        if(apUserFollow==null){
+
+            ApUserFan apUserFan = apUserFanMapper.selectByFansId(BurstUtils.groudOne(followId), followId, user.getId());
+
+            if(apUserFan==null){
+
+                apUserFan= new ApUserFan();
+                apUserFan.setId(sequences.sequenceApUserFan());
+                apUserFan.setUserId(followId);
+                apUserFan.setFansId(user.getId());
+                apUserFan.setFansName(user.getName());
+                apUserFan.setLevel((short) 0);
+                apUserFan.setIsDisplay(true);
+                apUserFan.setIsShieldComment(false);
+                apUserFan.setIsShieldLetter(false);
+                apUserFan.setBurst(BurstUtils.encrypt(apUserFan.getId(), apUserFan.getUserId()));
+
+                apUserFanMapper.insert(apUserFan);
+            }
+            apUserFollow= new ApUserFollow();
+
+            apUserFollow.setId(sequences.sequenceApUserFollow());
+            apUserFollow.setUserId(user.getId());
+            apUserFollow.setFollowId(followId);
+            apUserFollow.setFollowName(apUser.getName());
+            apUserFollow.setCreatedTime(new Date());
+            apUserFollow.setLevel((short) 0);
+            apUserFollow.setIsNotice(true);
+            apUserFollow.setBurst(BurstUtils.encrypt(apUserFollow.getId(),apUserFollow.getUserId()));
+
+            //记录用户关注的行为
+            FollowBehaviorDto dto = new FollowBehaviorDto();
+            dto.setFollowId(followId);
+            dto.setArticleId(articleId);
+
+            appFollowBehaviorService.saveFollowBehavior(dto);
+
+            int insert = apUserFollowMapper.insert(apUserFollow);
+
+            return ResponseResult.okResult(insert);
+
+        }else{
+
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_EXIST,"已关注");
+
+        }
     }
 
 
