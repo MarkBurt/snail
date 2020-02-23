@@ -17,6 +17,9 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 import java.io.IOException;
 
+/**
+ * @author MAIBENBEN
+ */
 @Getter
 @Setter
 @Configuration
@@ -29,8 +32,14 @@ public class MysqlCoreConfig {
     String jdbcUserName;
     String jdbcPassword;
     String jdbcDriver;
-    String rootMapper;//mapper文件在classpath下存放的根路径
-    String aliasesPackage;//别名包
+    /**
+     * mapper文件在classpath下存放的根路径
+     */
+    String rootMapper;
+    /**
+     * 别名包
+     */
+    String aliasesPackage;
 
     /**
      * 设置一个数据库的连接池
@@ -53,8 +62,10 @@ public class MysqlCoreConfig {
      * 密码反转操作
      */
     public String getRealPassword(){
-        String jdbcPassword = this.getJdbcPassword();//123456
-        String reverse = StringUtils.reverse(jdbcPassword);//654321
+        //123456
+        String jdbcPassword = this.getJdbcPassword();
+        //654321
+        String reverse = StringUtils.reverse(jdbcPassword);
         return  reverse;
     }
 
@@ -67,7 +78,8 @@ public class MysqlCoreConfig {
         //数据源
         factoryBean.setDataSource(dataSource);
         //别名
-//        factoryBean.setTypeAliasesPackage(this.getAliasesPackage());
+        //factoryBean.setTypeAliasesPackage(this.getAliasesPackage());
+
         //mapper文件存储的位置
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = resolver.getResources(this.getMapperFilePath());
