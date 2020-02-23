@@ -1,10 +1,15 @@
 package com.mark.login.service.impl;
 
+import com.mark.common.zookeeper.sequence.Sequences;
+import com.mark.login.service.AppFollowBehaviorService;
 import com.mark.login.service.AppUserRelationService;
 import com.mark.model.article.pojos.ApAuthor;
 import com.mark.model.common.dtos.ResponseResult;
 import com.mark.model.common.enums.AppHttpCodeEnum;
 import com.mark.model.mappers.app.ApAuthorMapper;
+import com.mark.model.mappers.app.ApUserFanMapper;
+import com.mark.model.mappers.app.ApUserFollowMapper;
+import com.mark.model.mappers.app.ApUserMapper;
 import com.mark.model.user.dtos.UserRelationDto;
 import com.mark.model.user.pojos.ApUser;
 import com.mark.utils.threadlocal.AppThreadLocalUtils;
@@ -27,6 +32,21 @@ public class AppUserRelationServiceImpl implements AppUserRelationService {
 
     @Autowired
     private ApAuthorMapper apAuthorMapper;
+
+    @Autowired
+    private ApUserMapper apUserMapper;
+
+    @Autowired
+    private ApUserFollowMapper apUserFollowMapper;
+
+    @Autowired
+    private ApUserFanMapper apUserFanMapper;
+
+    @Autowired
+    private Sequences sequences;
+
+    @Autowired
+    private AppFollowBehaviorService appFollowBehaviorService;
 
     /**
      * 用户的关注或取消关注
