@@ -1,8 +1,10 @@
 package com.mark.login.controller.v1;
 
+import com.mark.login.service.AppUserRelationService;
 import com.mark.model.common.dtos.ResponseResult;
 import com.mark.model.user.dtos.UserRelationDto;
 import com.mark.user.apis.UserRelationControllerApi;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRelationController implements UserRelationControllerApi {
 
 
+    @Autowired
+    private AppUserRelationService appUserRelationService;
+
     /**
      * 用户关注接口
      * @param dto
@@ -29,6 +34,6 @@ public class UserRelationController implements UserRelationControllerApi {
     @Override
     @PostMapping("/user_follow")
     public ResponseResult follow(UserRelationDto dto) {
-        return null;
+        return appUserRelationService.follow(dto);
     }
 }
