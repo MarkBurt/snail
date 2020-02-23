@@ -5,6 +5,9 @@ import com.mark.common.jackson.ConfusionModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author MAIBENBEN
+ */
 @Configuration
 public class InitJacksonConfig {
 

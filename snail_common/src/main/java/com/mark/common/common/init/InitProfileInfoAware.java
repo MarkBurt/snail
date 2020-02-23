@@ -8,10 +8,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author MAIBENBEN
+ */
 @Component
 public class InitProfileInfoAware implements ApplicationContextAware {
     Logger logger = LoggerFactory.getLogger(InitProfileInfoAware.class);
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException{
         // 在WEB环境才执行
         String temp[] =applicationContext.getEnvironment().getActiveProfiles();

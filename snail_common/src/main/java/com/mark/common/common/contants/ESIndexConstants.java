@@ -1,6 +1,10 @@
 package com.mark.common.common.contants;
 
+/**
+ * @author MAIBENBEN
+ */
 public class ESIndexConstants {
+
     public static final String DEFAULT_DOC ="_doc";
     public static final String ALL_INDEX ="app_info_*";
     public static final String ARTICLE_INDEX ="app_info_article";
