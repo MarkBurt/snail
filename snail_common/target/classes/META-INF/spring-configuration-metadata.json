@@ -167,6 +167,7 @@
     {
       "name": "mysql.core.aliases-package",
       "type": "java.lang.String",
+      "description": "别名包",
       "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
@@ -192,6 +193,7 @@
     {
       "name": "mysql.core.root-mapper",
       "type": "java.lang.String",
+      "description": "mapper文件在classpath下存放的根路径",
       "sourceType": "com.mark.common.mysql.core.MysqlCoreConfig"
     },
     {
