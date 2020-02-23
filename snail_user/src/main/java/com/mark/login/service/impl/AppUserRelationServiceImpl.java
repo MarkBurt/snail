@@ -175,7 +175,27 @@ public class AppUserRelationServiceImpl implements AppUserRelationService {
      * @return
      */
     private ResponseResult followCancelByUserId(ApUser user, Integer followId) {
-        return null;
+
+        ApUserFollow apUserFollow = apUserFollowMapper.selectByFollowId(BurstUtils.groudOne(user.getId()), user.getId(), followId);
+
+        if(apUserFollow==null){
+
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST,"未关注");
+
+        }else{
+
+            ApUserFan apUserFan = apUserFanMapper.selectByFansId(BurstUtils.groudOne(followId), followId, user.getId());
+
+            if(apUserFan!=null){
+
+                apUserFanMapper.deleteByFansId(BurstUtils.groudOne(followId),followId,user.getId());
+
+            }
+
+            int count = apUserFollowMapper.deleteByFollowId(BurstUtils.groudOne(user.getId()), user.getId(), followId);
+
+            return ResponseResult.okResult(count);
+        }
     }
 
 
