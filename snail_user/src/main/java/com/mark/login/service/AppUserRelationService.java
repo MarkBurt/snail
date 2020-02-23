@@ -14,5 +14,10 @@ import com.mark.model.user.dtos.UserRelationDto;
  */
 public interface AppUserRelationService {
 
-
+    /**
+     *用户的关注或取消关注
+     * @param dto
+     * @return
+     */
+    ResponseResult follow(UserRelationDto dto);
 }
