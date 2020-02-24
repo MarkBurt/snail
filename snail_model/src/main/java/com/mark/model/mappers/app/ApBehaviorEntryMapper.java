@@ -4,7 +4,9 @@ import com.mark.model.behavior.pojos.ApBehaviorEntry;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+/**
+ * @author MAIBENBEN
+ */
 public interface ApBehaviorEntryMapper {
 
     /**
